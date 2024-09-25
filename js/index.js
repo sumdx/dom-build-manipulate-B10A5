@@ -16,19 +16,19 @@ document.getElementById("blog-btn").addEventListener('click',
 // Button toggle donation
 document.getElementById("toggle-donation").addEventListener('click',function toggledonation(){
     showSection("section-donation");
-    if(activeDonation===false){
-        this.classList.toggle('active');
-    }   
+    document.getElementById("toggle-donation").classList.add("active");
+    document.getElementById("toggle-history").classList.remove("active")
+    document.getElementById("footer").classList.remove("hidden");
+
 })
 
 // Button toggle history
 document.getElementById("toggle-history").addEventListener('click',function toggleHistory(){
     showSection("section-history");
 
-    if(activehHistory===false){
-        this.classList.toggle('active');
-    }
-    
+    document.getElementById("toggle-history").classList.add("active");
+    document.getElementById("toggle-donation").classList.remove("active")
+    document.getElementById("footer").classList.add("hidden");
 })
 
 // Button Onclick for Noakhali
