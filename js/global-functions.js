@@ -20,14 +20,7 @@ function updateHistory(amount,name){
         <h1 class="font-bold">${amount} Taka is Donated for ${name}</h1>
         <p class="text-gray-400 ">Date : ${new Date().toString()}</p>
     `
-
     document.getElementById("history-list").appendChild(transactionList);
-    // `
-    //     <li class=" border rounded-lg p-7 flex flex-col gap-2">
-    //         <h1 class="font-bold">96500 Taka is Donated for fflo at Feni, Bangladesh</h1>
-    //         <p class="text-gray-400 ">Date : ${new Date().toString()}</p>
-    //     </li>
-    // `
 }
 
 function showSection(id){

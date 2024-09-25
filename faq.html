@@ -10,10 +10,81 @@
       type="text/css"
     />
     <script src="https://cdn.tailwindcss.com"></script>
-
+     <!-- Some css for colors -->
+     <style>
+        .bgNav {
+          background-color: #f9f7f3;
+        }
+        .bgBtn {
+          background-color: #b4f461;
+        }
+        .active {
+          background-color: #b4f461; /* Active state styling */
+          border: none;
+        }
+        
+      </style>
     <title>Faq</title>
   </head>
   <body>
+     <!-- Header -->
+     <header class="sticky top-0">
+        <div class="bgNav">
+          <nav class="container mx-auto py-5">
+            <!-- Navbar starts here -->
+            <div class="navbar">
+              <div class="navbar-start">
+                <button id="home-btn" class="btn bgBtn">Home</button>
+              </div>
+              <div class="navbar-center">
+                <img src="./assets/logo.png" alt="" />
+                <a class="btn btn-ghost text-xl">Donate Bangladesh</a>
+              </div>
+              <div class="navbar-end">
+                <img src="./assets/coin.png" alt="" />
+                <p id="faq-current-balance" class="text-lg mr-1 ml-2">5500</p>
+                <p class="text-lg">BDT</p>
+              </div>
+            </div>
+            <!-- Navbar end here -->
+          </nav>
+        </div>
+      </header>
+      <main class=" container p-40 mx-auto">
+        <!-- Acoordion starts here -->
+            <div class="collapse collapse-arrow bg-base-200 mb-5">
+            <input type="radio" name="my-accordion-2" checked="checked" />
+            <div class="collapse-title text-xl font-medium">What is the Document Object Model (DOM)?</div>
+            <div class="collapse-content">
+              <p>When a web page loads, it create a tree base document object and DOM has nodes of object. </p>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow bg-base-200 mb-5">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-medium">How do you select an element from the DOM?</div>
+            <div class="collapse-content">
+              <p>I will select element by Class name, tag name, Id name , queryselector and queryselectorAll</p>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow bg-base-200 mb-5">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-medium">What is event delegation in the context of the DOM, and why is it useful?</div>
+            <div class="collapse-content">
+              <p>Event delegation handles event efficiently.</p>
+            </div>
+        </div>
+            <div class="collapse collapse-arrow bg-base-200 mb-5">
+                <input type="radio" name="my-accordion-2" />
+                <div class="collapse-title text-xl font-medium">How do you manipulate an element's attributes and styles using the DOM?
+                </div>
+                <div class="collapse-content">
+                  <p>I will manipulate attributes by using setAttribute(),getAttribute(),hasAttribute(), removeAttribute(). I will manipulate styles using style.color or any other property I will chose and I can alsso add style.class for adding classes while using tailwind.</p>
+                </div>
+            </div>
+          
+        <!-- Acoordion ends here -->
+      </main>
     
+    <script src="./js/faq.js"></script>
   </body>
 </html>

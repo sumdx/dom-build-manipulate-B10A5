@@ -1,29 +1,37 @@
+
 var currentBalance = parseInt(getTextById("current-balance"));
+//localStorage.setItem("balance", currentBalance);
 var noakhaliBalance = parseInt(getTextById("noakhali-balance"));
 var feniBalance = parseInt(getTextById("feni-balance"));
 var injuredBalance = parseInt(getTextById("injured-balance"));
 
+// blog button click
+document.getElementById("blog-btn").addEventListener('click', 
+    function(){
+        window.location.href= "faq.html";
+    
+    })
 
+
+// Button toggle donation
 document.getElementById("toggle-donation").addEventListener('click',function toggledonation(){
     showSection("section-donation");
     if(activeDonation===false){
         this.classList.toggle('active');
-        activeDonation =true;
-        activehHistory =false;
-    }
-    
-   
+    }   
 })
+
+// Button toggle history
 document.getElementById("toggle-history").addEventListener('click',function toggleHistory(){
     showSection("section-history");
+
     if(activehHistory===false){
         this.classList.toggle('active');
-        activeDonation =false;
-        activehHistory =true;
     }
     
 })
 
+// Button Onclick for Noakhali
 document.getElementById("noakhali-btn").addEventListener('click',function(){
     const noakhaliInput = parseInt(getValueById("noakhali-input"));
     if(noakhaliInput>0){
@@ -32,6 +40,7 @@ document.getElementById("noakhali-btn").addEventListener('click',function(){
         }else{
             currentBalance-=noakhaliInput;
             updateBalance(currentBalance);
+            localStorage.setItem("balance", currentBalance);
             updateHistory(noakhaliInput,"famine-2024 at Noakhali, Bangladesh");
             document.getElementById("my_modal_1").showModal();
             document.getElementById("noakhali-input").value ="";
@@ -43,6 +52,8 @@ document.getElementById("noakhali-btn").addEventListener('click',function(){
     }
 })
 
+
+// Button Onclick for Feni
 document.getElementById("feni-btn").addEventListener('click',function(){
     const feniInput = parseInt(getValueById("feni-input"));
     if(feniInput>0){
@@ -51,6 +62,7 @@ document.getElementById("feni-btn").addEventListener('click',function(){
         }else{
             currentBalance-=feniInput;
             updateBalance(currentBalance);
+            localStorage.setItem("balance", currentBalance);
             updateHistory(feniInput,"Flood Relief in Feni,Bangladesh");
             document.getElementById("my_modal_1").showModal();
             document.getElementById("feni-input").value ="";
@@ -62,6 +74,7 @@ document.getElementById("feni-btn").addEventListener('click',function(){
     }
 })
 
+// Button Onclick for Injured Btn
 document.getElementById("injury-btn").addEventListener('click',function(){
     const injuredInput = parseInt(getValueById("injury-input"));
     if(injuredInput>0){
@@ -70,6 +83,7 @@ document.getElementById("injury-btn").addEventListener('click',function(){
         }else{
             currentBalance-=injuredInput;
             updateBalance(currentBalance);
+            localStorage.setItem("balance", currentBalance);
             updateHistory(injuredInput,"Aid for Injured in the Quota Movement");
             document.getElementById("my_modal_1").showModal();
             document.getElementById("injury-input").value ="";
